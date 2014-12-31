@@ -12,5 +12,10 @@ namespace Website.Controllers
         {
             return View();
         }
+
+        public ActionResult Item()
+        {
+            return PartialView();
+        }
     }
 }

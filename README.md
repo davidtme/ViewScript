@@ -1,33 +1,31 @@
 View Script
 ===========
 
-This is a small framework that allow typescript object to be executed when a html page is loaded.
+View Script is a small framework that allow ASP.NET MVC cshtml files to decorate sections of html with Typescript functions to be executed.
 
 Usage
 -----
 
-1. In your project create the typescript file **Scripts/views/shared/layout.ts**
-2. Paste the following code into the new file 
-``` Typescript
+1. Install the ViewScript nuget package:
+```
+PM> Install-Package AttributeRouting
+```
+2. In your project create a typescript file **Scripts/views/shared/layout.ts** and paste the following code into the new file 
+``` typescript
 module views.shared {
-    export class layout extends views.viewBase {
-        load() {
-            super.load();
-            alert('I have loaded');
-            this.$view.click(() => { this.$view.remove() });
-        }
-        unload() {
-            super.unload();
-        }
+    export function layout() {
+        var $view = $(this);
+        $view.css('background-color', '#ddd');
+        alert('loaded');
     }
 }
 ```
-3. In your **Views/Shared/_Layout.cshtml** add a data-viewscript attribute to to your body tag
+3. In your **Views/Shared/_Layout.cshtml** add a data-viewscript attribute to your body tag
 ``` html
 <body data-viewscript="views.shared.layout">
 ```
 4. Create a new bundle
-``` C#
+``` csharp
 public static void RegisterBundles(BundleCollection bundles)
 {
     bundles.Add(new ScriptBundle("~/Scripts/site.js")
@@ -46,4 +44,8 @@ public static void RegisterBundles(BundleCollection bundles)
 </head>
 ```
 
-when you open you page you will get a message and clicking on the text will remove it.
+When you open your page you the background color will change and you will get an alert message.
+
+You can decorate any element with the data-viewscript attribute. The called function's **this** object is set to the element.
+
+Checkout the demo site for a more in depth demo.

@@ -1,21 +1,4 @@
-﻿module views {
-    export class viewBase {
-        $view: JQuery;
-
-        init(element: Element) {
-            this.$view = $(element);
-            this.$view.on('viewscriptremove', this.unload);
-        }
-
-        load() {
-        }
-
-        unload() {
-        }
-    }
-}
-
-($ => {
+﻿($ => {
     $.event.special.viewscriptremove = {
         remove(o) {
             if (o.handler) {
@@ -41,9 +24,7 @@
             });
 
             if (current !== undefined && current !== null) {
-                var view = <views.viewBase>new current();
-                view.init(this);
-                view.load();
+                current.apply(this);
             }
         });
     }

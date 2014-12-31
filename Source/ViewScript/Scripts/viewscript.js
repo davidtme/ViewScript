@@ -1,24 +1,4 @@
-﻿var views;
-(function (views) {
-    var viewBase = (function () {
-        function viewBase() {
-        }
-        viewBase.prototype.init = function (element) {
-            this.$view = $(element);
-            this.$view.on('viewscriptremove', this.unload);
-        };
-
-        viewBase.prototype.load = function () {
-        };
-
-        viewBase.prototype.unload = function () {
-        };
-        return viewBase;
-    })();
-    views.viewBase = viewBase;
-})(views || (views = {}));
-
-(function ($) {
+﻿(function ($) {
     $.event.special.viewscriptremove = {
         remove: function (o) {
             if (o.handler) {
@@ -44,9 +24,7 @@
             });
 
             if (current !== undefined && current !== null) {
-                var view = new current();
-                view.init(_this);
-                view.load();
+                current.apply(_this);
             }
         });
     }

@@ -131,17 +131,30 @@
     <Content Include="Scripts\views\home\index.js">
       <DependentUpon>index.ts</DependentUpon>
     </Content>
+    <Content Include="Scripts\views\home\item.js">
+      <DependentUpon>item.ts</DependentUpon>
+    </Content>
     <Content Include="Scripts\views\shared\layout.js">
       <DependentUpon>layout.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\views\shared\navigation.js">
+      <DependentUpon>navigation.ts</DependentUpon>
     </Content>
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="ViewScript.nuspec" />
+    <Content Include="Views\Shared\_Navigation.cshtml" />
+    <Content Include="Scripts\views\shared\navigation.js.map">
+      <DependentUpon>navigation.ts</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\Item.cshtml" />
+    <Content Include="Scripts\views\home\item.js.map">
+      <DependentUpon>item.ts</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -160,6 +173,8 @@
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\viewscript.ts" />
     <TypeScriptCompile Include="Scripts\views\home\index.ts" />
+    <TypeScriptCompile Include="Scripts\views\home\item.ts" />
+    <TypeScriptCompile Include="Scripts\views\shared\navigation.ts" />
     <TypeScriptCompile Include="Scripts\views\shared\layout.ts" />
   </ItemGroup>
   <ItemGroup>

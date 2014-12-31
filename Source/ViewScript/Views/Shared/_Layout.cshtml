@@ -6,6 +6,9 @@
     @Scripts.Render("~/Scripts/site.js")
 </head>
 <body data-viewscript="views.shared.layout">
+    @{ Html.RenderPartial("_Navigation");}
+
     @RenderBody()
+
 </body>
 </html>
