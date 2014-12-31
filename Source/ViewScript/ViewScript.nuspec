@@ -1,16 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-  <id>ViewScript</id>
-  <version>0.1-alpha</version>
-  <authors>David Teasdale</authors>
-  <requireLicenseAcceptance>false</requireLicenseAcceptance>
-  <description>ViewScript</description>
-  <copyright>© 2014 David Teasdale</copyright>
-  <dependencies>
-    <dependency id="jQuery" version="1.10.2" />
-    <dependency id="jquery.TypeScript.DefinitelyTyped" version="1.7.2" />
-  </dependencies>
+    <id>ViewScript</id>
+    <version>0.1-alpha</version>
+    <title>View Script</title>
+    <authors>David Teasdale</authors>
+    <owners>David Teasdale</owners>
+    <licenseUrl>https://raw.githubusercontent.com/davidtme/ViewScript/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/davidtme/ViewScript</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ViewScript</description>
+    <copyright>© 2014 David Teasdale</copyright>
+    <tags>TypeScript JavaScript jQuery MVC</tags>
+    <dependencies>
+      <dependency id="jQuery" version="1.10.2" />
+      <dependency id="jquery.TypeScript.DefinitelyTyped" version="1.7.2" />
+    </dependencies>
   </metadata>
   <files>
     <file src="Scripts\viewscript.js" target="Content\Scripts" />
